@@ -20,7 +20,7 @@ type Props = {
       return '#FF0000';
     } else {
       // 例外処理：範囲外の値が渡された場合
-      throw new Error('Invalid value for "lefttimes" prop.');
+      
     }
   }
   

@@ -6,7 +6,7 @@ export const Camera = () => {
 
   const videoConstraints = {
     width: 414,
-    height: 744,
+    height: 644,
     facingMode: 'user',
   };
 
