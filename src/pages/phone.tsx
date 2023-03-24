@@ -1,37 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Camera } from "../components/camera";
 import { SecondsToMinutes } from "@/components/timer";
 import { Progress } from "@/components/progress";
 import { CenterStack } from "@/components/centerStack";
 import { NextQuestionButton } from "@/components/nextQuestion";
+import { BreakTime } from "@/components/breakTime";
 
 import { Rectangle } from "@/components/rectangle";
 import styles from "../styles/style.module.css";
 import { questions } from "../data/question";
 
 const Phone = () => {
+  const [start, setStart] = useState(false);
   const [count, setCount] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((count) => count + 1);
+   if(start) {timerRef.current = setInterval(() => {
+      setCount((prevCount) => {
+        return prevCount + 1
+      } );
     }, 10);
-    return () => clearInterval(interval);
-  }, []);
 
-  var qIndex = Math.min(Math.floor(count / 2000), 19);
+    return () => clearInterval(timerRef.current!);}
+  }, [start]);
 
-  var isStopping = false;
+
+  var qIndex = Math.min(Math.floor(count / 3000), 19);
+
 
   return (
     <div className={styles.entire}>
       <div className={styles.container}>
-        <Rectangle>
+        {(start && count%3000 <= 2000 ) && <Rectangle>
           <h3>{"Q." + questions[qIndex].index}</h3>
           <div style={{ width: 10 }}></div>
           <h3>{questions[qIndex].question}</h3>
-        </Rectangle>
-        <Progress lefttimes={(count / 100) % 20}></Progress>
+        </Rectangle>}
+       {(!start || count%3000 > 2000 ) && <Rectangle>
+          <h3>{"問題がここに表示されます"}</h3>
+          <></>
+        </Rectangle>}
+        <Progress lefttimes={(count / 100) % 30}></Progress>
             <Camera></Camera>
         <div
           style={{
@@ -42,9 +52,20 @@ const Phone = () => {
         >
           <div className={styles.background}>
           </div>
-          <div className={styles.foreground}>
+          { !start && <div className={styles.foreground} onClick = {
+            () => {
+              setStart(true);
+            }
+          }>
             <NextQuestionButton></NextQuestionButton>
-          </div>
+          </div>}
+          { count%3000 > 2000  && <div className={styles.foreground} onClick = {
+            () => {
+            }
+          }>
+            <BreakTime breaktime={Math.floor(31 - (count%3000)/100)}></BreakTime>
+          </div>}
+
         </div>
 
         <SecondsToMinutes totalSeconds={count / 100}></SecondsToMinutes>
