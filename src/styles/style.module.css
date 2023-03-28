@@ -1,3 +1,7 @@
+* {
+  font-family: sans-serif;
+}
+
 .rectangle {
   display: flex;
   flex-direction: row;
