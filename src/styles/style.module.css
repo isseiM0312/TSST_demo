@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   height: 120px;
-  width: 356px;
+  width: 200px;
   background-color: white;
 }
 
@@ -25,7 +25,7 @@
     justify-content: center; /* 縦方向の中央ぞろえ */
     align-items: center; /* 横方向の中央ぞろえ */
     height: 844px;
-    width: 356px;
+    width: 200px;
   }
   
   .entire {
