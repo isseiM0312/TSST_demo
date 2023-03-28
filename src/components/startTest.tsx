@@ -12,7 +12,7 @@ export function StartTest() {
         backgroundColor: '#007297',
       }}
     >
-      <h1 style={{ color: '#fff', fontSize: '3rem' }}>テストを開始する</h1>
+      <h1 style={{ color: '#fff', fontSize: '2rem' }}>テストを開始する</h1>
       <Link href="/phone" style={{
             textDecoration: 'none',
             }}>

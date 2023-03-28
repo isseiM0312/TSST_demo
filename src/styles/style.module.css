@@ -29,8 +29,7 @@
   .entire {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100vw; /* 画面の高さを100%に設定 */
+    align-items: center;/* 画面の高さを100%に設定 */
   }
 
   .background {

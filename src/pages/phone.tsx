@@ -35,13 +35,13 @@ const Phone = () => {
         {(start && count%3000 <= 2000 ) && <Rectangle>
           <h3>{"Q." + questions[qIndex].index}</h3>
           <div style={{ width: 10 }}></div>
-          <h3>{questions[qIndex].question}</h3>
+          <h4>{questions[qIndex].question}</h4>
         </Rectangle>}
        {(!start || count%3000 > 2000 ) && <Rectangle>
-          <h3>{"問題がここに表示されます"}</h3>
           <></>
+          <h3>{"問題がここに表示されます"}</h3>
         </Rectangle>}
-        <Progress lefttimes={(count / 100) % 30}></Progress>
+        <Progress lefttimes={Math.min((count / 100) % 30,20)}></Progress>
             <Camera></Camera>
         <div
           style={{
