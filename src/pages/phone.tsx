@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Camera } from "../components/camera";
 import { SecondsToMinutes } from "@/components/timer";
 import { Progress } from "@/components/progress";
-import { CenterStack } from "@/components/centerStack";
 import { NextQuestionButton } from "@/components/nextQuestion";
 import { BreakTime } from "@/components/breakTime";
 

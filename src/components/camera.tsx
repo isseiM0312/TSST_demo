@@ -5,7 +5,7 @@ export const Camera = () => {
   const webcamRef = React.useRef(null);
 
   const videoConstraints = {
-    width: 414,
+    width: 356,
     height: 644,
     facingMode: 'user',
   };
