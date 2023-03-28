@@ -12,4 +12,5 @@ module.exports = withPWA({
     skipWaiting: true,
   },
   reactStrinctMode: true,
+  optimizeFonts: false
 });
