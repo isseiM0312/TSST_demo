@@ -17,7 +17,7 @@ type BreakTimeProps = {
   
 export const BreakTime = ({ breaktime } : BreakTimeProps) => {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 414 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 300 }}>
         <h1 style={h1Style}>{breaktime}</h1>
         <p style={pStyle}>次の問題に備えてください</p>
       </div>
