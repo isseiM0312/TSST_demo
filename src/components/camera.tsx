@@ -20,7 +20,7 @@ export const Camera = () => {
         width={videoConstraints.width} */
         videoConstraints={videoConstraints}
         style = {{
-          objectFit : "contain"
+          objectFit : "scale-down"
         }}
       />
     </div>
