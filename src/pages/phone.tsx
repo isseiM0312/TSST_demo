@@ -14,9 +14,14 @@ const Phone = () => {
   const [count, setCount] = useState(0);
   const timerRef = useRef<NodeJS.Timeout>();
 
+  var qIndex = Math.min(Math.floor(count / 3000), 19);
+
   useEffect(() => {
    if(start) {timerRef.current = setInterval(() => {
       setCount((prevCount) => {
+        if (prevCount % 3000 === 0) {
+          readInVoice(questions[Math.min(Math.floor(prevCount / 3000), 19)].question)
+        }
         return prevCount + 1
       } );
     }, 10);
@@ -25,8 +30,13 @@ const Phone = () => {
   }, [start]);
 
 
-  var qIndex = Math.min(Math.floor(count / 3000), 19);
 
+
+  function readInVoice(sentence : string) {
+    let utterance = new SpeechSynthesisUtterance(sentence);
+    utterance.lang = 'en-Eng'
+    speechSynthesis.speak(utterance)
+  }
 
   return (
     <div className={styles.entire}>
