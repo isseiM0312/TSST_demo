@@ -8,7 +8,7 @@ export const CenterStack: React.FC<CenterStackProps> = ({ children }) => {
   return (
     <div
       style={{
-        width: 414,
+        width: 644,
         height: '812px',
         position: 'relative',
       }}
@@ -17,7 +17,7 @@ export const CenterStack: React.FC<CenterStackProps> = ({ children }) => {
           top : 10,
           left : 10,
         position: 'absolute',
-        width: 200,
+        width: 644,
         height: 10,
       }} >
       {children}

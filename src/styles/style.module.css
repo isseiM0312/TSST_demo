@@ -1,10 +1,12 @@
+
+
 .rectangle {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 120px;
-  width: 414px;
+  width: 644px;
   background-color: white;
 }
 
@@ -23,14 +25,13 @@
     justify-content: center; /* 縦方向の中央ぞろえ */
     align-items: center; /* 横方向の中央ぞろえ */
     height: 844px;
-    width: 414px;
+    width: 644px;
   }
   
   .entire {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100vw; /* 画面の高さを100%に設定 */
+    align-items: center;/* 画面の高さを100%に設定 */
   }
 
   .background {

@@ -26,7 +26,7 @@ type Props = {
   
 
 export const Progress = ({ lefttimes } : Props) => {
-  const progressWidth = `${(lefttimes * 5).toFixed(2)}%`;
+  const progressWidth = `${Math.max(lefttimes * 5).toFixed(2)}%`;
   const barStyle = {
     width: progressWidth,
     height: '100%',

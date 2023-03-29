@@ -16,7 +16,7 @@ const Text = {
 
 export const NextQuestionButton: React.FC = () => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 414 }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 644 }}>
       <div style={Triangle} />
       <div style={Text}>テストを開始</div>
     </div>

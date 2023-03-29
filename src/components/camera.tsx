@@ -5,7 +5,7 @@ export const Camera = () => {
   const webcamRef = React.useRef(null);
 
   const videoConstraints = {
-    width: 414,
+    width: 644, //356
     height: 644,
     facingMode: 'user',
   };
@@ -14,11 +14,14 @@ export const Camera = () => {
     <div>
       <Webcam
         audio={false}
-        height={videoConstraints.height}
         ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        width={videoConstraints.width}
+        screenshotFormat="image/jpeg"/* 
+        height={videoConstraints.height}
+        width={videoConstraints.width} */
         videoConstraints={videoConstraints}
+        style = {{
+          objectFit : "scale-down"
+        }}
       />
     </div>
   );
